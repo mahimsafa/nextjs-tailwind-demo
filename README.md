@@ -32,3 +32,4 @@ npm install
 npm run dev
 ```
 
+### see browser console for search request
