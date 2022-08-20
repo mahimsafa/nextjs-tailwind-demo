@@ -1,85 +1,57 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+import { BsArrowRightCircle } from 'react-icons/bs'
+import { IconContext } from 'react-icons'
+
+import MainLayout from '../components/layout/MainLayout'
+import Hero from '../components/Hero'
+import Search from '../components/Search'
+import Articles from '../components/Articles'
+import Carousel from '../components/Carousel'
+
+import { events, books, articles } from '../data'
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <MainLayout>
+      <>
+        <Head>
+          <title>Test Project</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <div className=''>
+          <Hero />
+          <Search />
+          <Articles item={articles[0]} />
+          <Carousel title='Books & Downloads' items={books} type='book' description='Drive into some new, exciting topics or learn more about what our software has to offer. <br />Oh, and please let us know if you like us to cover anything else.' />
+          <Carousel title='Events' viewall items={events} type='event' description='Drive into some new, exciting topics or learn more about what our software has to offer. <br />Oh, and please let us know if you like us to cover anything else.' />
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
+          <div className='container mx-auto my-20 flex justify-between items-center flex-col lg:flex-row gap-6'>
+            <div className='flex justify-center flex-col w-full lg:w-1/2'>
+              <p className='uppercase text-[1.6rem] text-center lg:text-left'>collaborative work management</p>
+              <p className='text-[4.5rem] font-bold text-center lg:text-left'>Stay Connected</p>
+            </div>
+            <div className='w-full lg:w-1/2'>
+              <p className='text-xl text-justify'>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit atque excepturi, voluptatum pariatur deserunt sequi animi omnis expedita cumque recusandae quidem magni nostrum cum nam quod harum enim quasi nihil mollitia doloremque, suscipit debitis autem, quam sed. Fuga optio, debitis, voluptas modi sed molestiae voluptate et ducimus explicabo, deleniti quam?
+              </p>
+              <div className='mt-12 flex flex-col lg:flex-row w-full gap-6 lg:gap-0 items-center justify-between'>
+                <p className='uppercase text-[2rem] flex-grow'>subscribe now</p>
+                <div className='w-full lg:w-auto flex flex-row justify-between flex-grow'>
 
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
-          </a>
+                  <input type="email" placeholder='Enter email ' className='flex-grow outline-none border-b-2 border-gray-700' />
+                  <IconContext.Provider value={{ size: '2rem' }}>
 
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+                    <BsArrowRightCircle />
+                  </IconContext.Provider>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
-      </footer>
-    </div>
+      </>
+    </MainLayout>
   )
 }
 
