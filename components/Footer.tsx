@@ -18,7 +18,7 @@ const Footer: NextPage = () => (
                 <div >
                     {/* <p className='text-[4rem] font-bold mt-10 mb-2'>E</p> */}
                     <div className='w-10 h-10 mt-10 mb-8'>
-                        <Image src={Logo} />
+                        <Image src={Logo} priority />
                     </div>
                     <p className='text-base'>Inspiring world through change.</p>
                 </div>

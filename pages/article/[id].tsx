@@ -72,7 +72,7 @@ const ArticleDetail = () => {
                     <div className='flex flex-col space-y-4 lg:ml-10 w-full lg:w-1/3' >
                         <p className='text-[1.5rem] font-semibold mt-32'>  About the author</p>
                         <div className='w-[250px] h-[200px] relative my-5 m-0'>
-                            <Image src='https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1021&q=80' alt='' layout='fill' />
+                            <Image src='https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1021&q=80' alt='' priority={false} layout='fill' />
                         </div>
                         <p className='text-xl'>Katy Liu</p>
 

@@ -20,7 +20,7 @@ const Event: NextPage<Item> = ({ item: { title, time, location, description, ima
   return (
     <div className='w-[27rem] h-[35rem] rounded-md overflow-hidden flex-shrink-0 snap-center'>
       <div className='w-full h-3/6 relative' >
-        <Image src={image} layout='fill' alt={title} />
+        <Image src={image} layout='fill' alt={title} priority={false} />
       </div>
       <div className='flex flex-col gap-2'>
         <div className='flex flex-row justify-between'>
